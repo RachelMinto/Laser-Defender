@@ -61,9 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Laser.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <None Include="Assets\Space Shooter Visual Assets\license.txt" />
-    <None Include="Assets\Space Shooter Visual Assets\Spritesheet\sheet.xml" />
+    <None Include="Assets\Z. Kenney Assets\license.txt" />
+    <None Include="Assets\Z. Kenney Assets\Spritesheet\sheet.xml" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/rachelminto/Projects/Udemy/Unity2D/LaserDefender/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
