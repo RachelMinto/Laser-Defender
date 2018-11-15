@@ -255,6 +255,63 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63f11e27446cd4d2eb900bc7daeffcae, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &424479849
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4281814632371296, guid: 24913bf5033584469bd276d22509d966, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281814632371296, guid: 24913bf5033584469bd276d22509d966, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281814632371296, guid: 24913bf5033584469bd276d22509d966, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281814632371296, guid: 24913bf5033584469bd276d22509d966, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281814632371296, guid: 24913bf5033584469bd276d22509d966, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281814632371296, guid: 24913bf5033584469bd276d22509d966, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281814632371296, guid: 24913bf5033584469bd276d22509d966, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281814632371296, guid: 24913bf5033584469bd276d22509d966, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709024249645872, guid: 24913bf5033584469bd276d22509d966, type: 2}
+      propertyPath: m_Name
+      value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114370873855550324, guid: 24913bf5033584469bd276d22509d966,
+        type: 2}
+      propertyPath: waveConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 627a6f69080b0466e91eb1a1c496e8d7,
+        type: 2}
+    - target: {fileID: 114370873855550324, guid: 24913bf5033584469bd276d22509d966,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 24913bf5033584469bd276d22509d966, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &444636716
 Prefab:
   m_ObjectHideFlags: 0
