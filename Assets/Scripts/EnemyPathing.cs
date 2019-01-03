@@ -15,8 +15,7 @@ public class EnemyPathing : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
         Move();
     }
 
@@ -26,18 +25,15 @@ public class EnemyPathing : MonoBehaviour {
 
     private void Move()
     {
-        if (waypointIndex <= waypoints.Count - 1)
-        {
+        if (waypointIndex <= waypoints.Count - 1) {
             var targetPosition = waypoints[waypointIndex].transform.position;
             var movementThisFrame = waveConfig.GetMoveSpeed() * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);
-            if (transform.position == targetPosition)
-            {
+            if (transform.position == targetPosition) {
                 waypointIndex++;
             }
         } 
-        else
-        {
+        else {
             Destroy(gameObject);
         }
     }
