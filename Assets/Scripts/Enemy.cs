@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+        resetShotCounter();
 	}
 	
 	// Update is called once per frame
@@ -21,10 +21,15 @@ public class Enemy : MonoBehaviour {
         CountDownAndShoot();
 	}
 
+    private void resetShotCounter() {
+        shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+    }
+
     private void CountDownAndShoot() {
         shotCounter -= Time.deltaTime; // Subtract how long the frame takes.
         if (shotCounter <= 0) {
             Fire();
+            resetShotCounter();
         }
     }
 
@@ -46,6 +51,7 @@ public class Enemy : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        if (!damageDealer) { return; }
         ProcessHit(damageDealer);
     }
 
@@ -54,6 +60,7 @@ public class Enemy : MonoBehaviour {
         health -= damageDealer.GetDamage();
         if (health <= 0)
         {
+            damageDealer.Hit();
             Destroy(gameObject);
         }
     }
