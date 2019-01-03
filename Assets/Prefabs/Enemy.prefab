@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4281814632371296}
   - component: {fileID: 212724173723999052}
   - component: {fileID: 114370873855550324}
+  - component: {fileID: 114748036501491740}
+  - component: {fileID: 58381061471287808}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -41,6 +43,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58381061471287808
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709024249645872}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.485
 --- !u!114 &114370873855550324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,8 +69,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e31bf72ea94484c8092d0d2b3834a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfig: {fileID: 11400000, guid: 196c067f0b25e44859f5ca4d9c7499e0, type: 2}
-  moveSpeed: 2
+--- !u!114 &114748036501491740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709024249645872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275671bce7d3842509679069308c972d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
 --- !u!212 &212724173723999052
 SpriteRenderer:
   m_ObjectHideFlags: 1

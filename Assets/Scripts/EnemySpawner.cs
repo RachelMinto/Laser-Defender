@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private IEnumerator SpawnAllEnemiesInWave(WaveConfig waveConfig) {
-        for (int i = 0; i < waveConfig.GetNumberOfEnemeies(); i++) {
+        for (int i = 0; i < waveConfig.GetNumberOfEnemies(); i++) {
             var newEnemy = Instantiate(
                 waveConfig.GetEnemyPrefab(),
                 waveConfig.GetWaypoints()[0].transform.position,
