@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-
+    [Header("Enemy")]
     [SerializeField] float health = 100;
+    [Header("Projectile")]
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
+    [Header("Death")]
+    [SerializeField] GameObject explosionEffectPrefab;
+    [SerializeField] float durationOfExplosion = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -62,6 +66,18 @@ public class Enemy : MonoBehaviour {
         {
             damageDealer.Hit();
             Destroy(gameObject);
+            ExplodingVisualEffect();
         }
+    }
+
+    private void ExplodingVisualEffect() 
+    {
+        GameObject explosion = Instantiate(
+            explosionEffectPrefab,
+            transform.position,
+            Quaternion.identity
+        ) as GameObject;
+
+        Object.Destroy(explosion, durationOfExplosion);
     }
 }
