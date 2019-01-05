@@ -35,3 +35,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Laser Defender Project specific audio resource folder
+Assets/AudioAssets/
+Assets/AudioAssets.meta

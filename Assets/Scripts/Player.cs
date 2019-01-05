@@ -12,6 +12,9 @@ public class Player : MonoBehaviour {
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.1f;
+    [Header("Death")]
+    public AudioClip deathSound;
+    [SerializeField] [Range(0, 1)] float deathVolume = 1f;
 
     Coroutine firingCoroutine;
 
@@ -81,8 +84,14 @@ public class Player : MonoBehaviour {
         if (health <= 0)
         {
             damageDealer.Hit();
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathVolume);
     }
 
     private void SetupMoveBoundaries() {

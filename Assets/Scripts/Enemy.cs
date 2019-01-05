@@ -11,9 +11,13 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float maxTimeBetweenShots = 3f;
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
+    public AudioClip laserShot;
+    [SerializeField] [Range(0, 1)] float laserShotVolume = 0.7f;
     [Header("Death")]
     [SerializeField] GameObject explosionEffectPrefab;
     [SerializeField] float durationOfExplosion = 1f;
+    public AudioClip deathSound;
+    [SerializeField] [Range(0,1)] float deathVolume = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +43,7 @@ public class Enemy : MonoBehaviour {
 
     private void Fire() {
         CreateLaser();
+        AudioSource.PlayClipAtPoint(laserShot, Camera.main.transform.position, laserShotVolume);
     }
 
     private void CreateLaser()
@@ -65,9 +70,15 @@ public class Enemy : MonoBehaviour {
         if (health <= 0)
         {
             damageDealer.Hit();
-            Destroy(gameObject);
-            ExplodingVisualEffect();
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(deathSound, Camera.main.transform.position, deathVolume);
+        ExplodingVisualEffect(); 
     }
 
     private void ExplodingVisualEffect() 
