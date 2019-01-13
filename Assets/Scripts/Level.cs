@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour {
     [SerializeField] float delayLoadBySeconds = 2f;
+
     public void LoadGameScene()
     {
         SceneManager.LoadScene(1);
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadGameOverScene()
