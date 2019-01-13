@@ -27,7 +27,6 @@ public class GameSession : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
     public int GetScore () {
         return score;
 	}
